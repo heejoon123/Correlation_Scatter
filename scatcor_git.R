@@ -1,8 +1,7 @@
 #' Scatter Correlational Plot function for Correlational Plots with ScatterPlot 
 #' of variables within R 
 #' 
-#' This is a very manual way to make this plot and the code is for public use within the dAbL
-#' Lab Members!!!
+#' This is a very manual way to make this plot and the code is for public use
 
 #' LOADING IN THE NECESSARY LIBRARIES
 library(lattice)
