@@ -52,7 +52,7 @@ myscatter_lower <- function(data,
 #' pcolor = color of points. The default is set to "blue" for now unless specified as otherwise
 #' text_si
 scatter_cor <- function(df, pcolor = "blue",text_size = 0.75, psize = 0.05, remove_id=TRUE,
-                        cor_color = "PuOr", text_col="red"){
+                        cor_color = "PuOr", text_col="red", corr_order = "hclust"){
   df <- dplyr::select_if(df, is.numeric)
   # removes the ID column just in case
   if(remove_id==TRUE){
@@ -60,8 +60,8 @@ scatter_cor <- function(df, pcolor = "blue",text_size = 0.75, psize = 0.05, remo
   }else{
     df <- df
   }
-  order <- corrMatOrder(cor(df), order="hclust")
-  corrplot(cor(df), type="upper", method="color", order = "hclust", tl.pos = "tl",
+  order <- corrMatOrder(cor(df), order=corr_order)
+  corrplot(cor(df), type="upper", method="color", order = corr_order, tl.pos = "tl",
            tl.cex = text_size, tl.col = text_col, tl.srt=45, 
            col=brewer.pal(n=8, name=cor_color))
   myscatter_lower(df[,order], point_color = pcolor, point_size = psize)
