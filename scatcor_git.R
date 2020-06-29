@@ -70,6 +70,8 @@ scatter_cor <- function(df, pcolor = "blue",text_size = 0.75, psize = 0.05, remo
 }
 
 ### Testing this on a test dataset to make sure this works
+# file.choose() lets you load in the csv file of interest interactively, so if you don't want this,
+# just replace it with the file path!
 test.df <- read.csv(file=file.choose())
 
 # color palette options for points
