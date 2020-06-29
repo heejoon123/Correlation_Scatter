@@ -62,9 +62,10 @@ scatter_cor <- function(df, pcolor = "blue",text_size = 0.75, psize = 0.05, remo
     df <- df
   }
   order <- corrMatOrder(cor(df), order=corr_order)
+  col <- colorRampPalette(c("#b35707", "white", "#532788"))(150)
   corrplot(cor(df), type="upper", method="color", order = corr_order, tl.pos = "tl",
            tl.cex = text_size, tl.col = text_col, tl.srt=45, 
-           col=brewer.pal(n=8, name=cor_color))
+           col=col)
   myscatter_lower(df[,order], point_color = pcolor, point_size = psize)
 }
 
