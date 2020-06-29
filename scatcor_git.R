@@ -1,3 +1,4 @@
+#' Name: Heejoon Ahn
 #' Scatter Correlational Plot function for Correlational Plots with ScatterPlot 
 #' of variables within R 
 #' 
